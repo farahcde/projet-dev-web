@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CVision</title>
+
+<style>
+
+body {
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color:#fff;
+}
+
+/* HERO */
+.hero {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px;
+  gap:50px;
+}
+
+.hero-left h1 {
+  font-size:60px;
+  background: linear-gradient(90deg, #00f5a0, #00d9f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slogan {
+  font-size:22px;
+  font-weight:600;
+  margin:15px 0;
+  color:#ccefff;
+}
+
+.desc {
+  font-size:16px;
+  line-height:1.7;
+  color:#dfefff;
+}
+
+.hero-points li {
+  margin:8px 0;
+  list-style:none;
+}
+
+.hero-points li::before {
+  content:"•";
+  margin-right:10px;
+  color:#00f5a0;
+}
+
+.hero-right {
+  width:40%;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  padding:25px;
+  border-radius:20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  color:#fff;
+}
+
+/* TITLES */
+.section-title {
+  text-align:center;
+  padding:60px 20px;
+}
+
+.section-title h2 {
+  font-size:32px;
+}
+
+.section-title p {
+  color:#bbb;
+}
+
+/* FEATURES */
+.features {
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:40px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding:25px;
+  border-radius:15px;
+  backdrop-filter: blur(10px);
+  transition:0.3s;
+  width:200px;
+  text-align:center;
+}
+
+.card:hover {
+  transform:translateY(-10px) scale(1.05);
+}
+
+/* STEPS */
+.steps {
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:50px;
+}
+
+.step {
+  width:250px;
+  padding:25px;
+  border-radius:15px;
+  background: linear-gradient(145deg, #1c2b33, #243b45);
+}
+
+.container {
+  display:flex;
+  gap:20px;
+  padding:40px;
+}
+
+.formulaire {
+  width:40%;
+  background: rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:20px;
+}
+
+.cv {
+  width:60%;
+  background:white;
+  color:black;
+  padding:30px;
+  border-radius:20px;
+  border-top:6px solid var(--c);
+}
+
+.cv-header {
+  text-align:center;
+  border-bottom:3px solid var(--c);
+}
+
+.section h3 {
+  color: var(--c);
+}
+
+/* THEMES */
+.theme0 { --c:#000; }
+.theme1 { --c:#2f404a; }
+.theme2 { --c:#01360f; }
+.theme3 { --c:#311810; }
+
+/* INPUTS */
+input, textarea {
+  width:100%;
+  margin:8px 0;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  background: rgba(255,255,255,0.1);
+  color:white;
+}
+
+select {
+  background: rgba(255,255,255,0.15);
+  color:white;
+}
+select option {
+  color:black;
+}
+
+/* BUTTON */
+button {
+  background: linear-gradient(90deg, #ffdde1, #eac1c7);
+  color:black;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+}
+
+.btn-group {
+  display:flex;
+  gap:10px;
+}
+
+/* SCORE */
+.bar {
+  width:100%;
+  height:12px;
+  background:#ddd;
+  border-radius:10px;
+}
+
+#barFill {
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, rgb(186, 4, 4), rgb(175, 87, 4), rgb(24, 214, 24));
+}
+
+/* PHOTO */
+.photo {
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:4px solid var(--c);
+  box-shadow:0 0 15px var(--c);
+}
+
+/* FOOTER */
+.footer {
+  text-align:center;
+  padding:40px;
+  background:#020d14;
+}
+
+/* PRINT */
+@media print {
+  body * { visibility:hidden; }
+  .cv, .cv * { visibility:visible; }
+  .cv {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+  }
+}
+
+</style>
+</head>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CVision</title>
+
+<link rel="stylesheet" href="projet.css">
+</head>
+
+<body>
+
+<!--en-tête du site-->
+<div class="hero">
+
+  <div class="hero-left">
+    <h1>CVision</h1>
+
+    <p class="slogan">
+      Créez un CV gagnant gratuitement
+    </p>
+
+    <p class="desc">
+      Votre premier CV est 100% gratuit à vie.<br>
+      Téléchargements illimités. Aucun frais caché.<br><br>
+      Créez un CV moderne, clair et professionnel en quelques minutes seulement.
+    </p>
+
+    <ul class="hero-points">
+      <li>Facile à utiliser</li>
+      <li>Design professionnel</li>
+      <li>Téléchargement rapide</li>
+    </ul>
+
+  </div>
+
+  <div class="hero-right">
+    <h3>Exemple de CV</h3>
+
+    <p><b>Jean Dupont</b><br>Développeur Web</p>
+    <p>jean@mail.com | 12345678 | Paris | github.com/jdupont</p>
+
+    <hr>
+
+    <p><b>Profil :</b> Étudiant motivé en informatique avec projets en JavaScript.</p>
+
+    <p><b>Expériences :</b> Stage développement web (2024)</p>
+
+    <p><b>Projets :</b> Site e-commerce, App mobile</p>
+
+    <p><b>Formation :</b> Licence Informatique</p>
+
+    <p><b>Compétences :</b> HTML, CSS, JS</p>
+
+    <p><b>Soft Skills :</b> Autonome, Rigoureux</p>
+
+  </div>
+
+</div>
+<div class="section-title">
+  <h2>Ce que CVision vous offre</h2>
+  <p>Un outil simple mais puissant pour créer un CV professionnel</p>
+</div>
+<!--fonctionnalités du site-->
+<div class="features">
+  
+  <div class="card">
+    <h3>Gratuité</h3>
+    <p>CV gratuit et modifiable sans limite</p>
+  </div>
+
+  <div class="card">
+    <h3>Téléchargement PDF</h3>
+    <p>Imprimez à tout moment</p>
+  </div>
+
+  <div class="card">
+    <h3>Design Moderne</h3>
+    <p>CV professionnel et élégant</p>
+  </div>
+
+  <div class="card">
+    <h3>Confidentialité</h3>
+    <p>Vos données sont protégées</p>
+  </div>
+</div>
+
+<div class="section-title">
+  <h2>Comment fonctionne CVision</h2>
+  <p>3 étapes simples pour créer votre CV</p>
+</div>
+<div class="steps">
+  <div class="step">
+    <h3>Ajoutez votre contenu</h3>
+    <p>Remplissez votre CV facilement étape par étape</p>
+  </div>
+
+  <div class="step">
+    <h3>Choisissez un design</h3>
+    <p>Sélectionnez un thème et une police</p>
+  </div>
+
+  <div class="step">
+    <h3>Téléchargez</h3>
+    <p>Exportez votre CV en PDF en un clic</p>
+  </div>
+</div>
+<!--corps du site-->
+<div class="container">
+
+  <!--formulaire-->
+  <div class="formulaire">
+
+    <h2>Créer votre CV</h2>
+    <p class="note">*: champs obligatoires</p>
+
+    <input type="file" id="photo">
+
+    <input id="nom" placeholder="Nom *">
+    <input id="prenom" placeholder="Prénom *">
+    <input id="titre" placeholder="Titre *">
+    <input id="email" type="email" placeholder="Email *">
+    <input id="tel" type="tel" pattern="[0-9]{8}" placeholder="Téléphone *">
+    <input id="ville" placeholder="Ville *">
+    <input id="github" placeholder="GitHub">
+
+    <textarea id="profil" placeholder="Profil *"></textarea>
+
+    <h3>Expériences</h3>
+    <div id="expContainer"></div>
+    <button onclick="addField('expContainer')">Ajouter</button>
+
+    <h3>Compétences</h3>
+    <div id="skillContainer"></div>
+    <button onclick="addSkill()">Ajouter</button>
+
+    <h3>Soft Skills</h3>
+    <input id="softInput" placeholder="Ajouter un soft skill">
+
+    <div id="suggestions">
+      <span onclick="addTag('Esprit d’équipe')">Esprit d’équipe</span>
+      <span onclick="addTag('Autonome')">Autonome</span>
+      <span onclick="addTag('Rigoureux')">Rigoureux</span>
+      <span onclick="addTag('Créatif')">Créatif</span>
+    </div>
+
+    <h3>Thème</h3>
+    <select onchange="setTheme(this.value)">
+      <option value="theme0">Noir</option>
+      <option value="theme1">Bleu</option>
+      <option value="theme2">Vert</option>
+      <option value="theme3">Marron</option>
+    </select>
+
+    <h3>Police</h3>
+    <select onchange="setFont(this.value)">
+      <option value="Arial">Arial</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Courier New">Courier</option>
+    </select>
+    <br>
+    
+    <br><br>
+    <div class="btn-group">
+      <button onclick="resetForm()">Réinitialiser</button>
+      <button onclick="printCV()">Télécharger CV</button>
+    </div>
+
+  </div>
+
+  <!--aperçu du cv-->
+  <div class="cv theme0" id="cv">
+
+    <img id="cvPhoto" class="photo">
+
+    <div class="cv-header">
+    <h1 id="cvNom">Nom Prénom</h1>
+    <p id="cvTitre"></p>
+    <p id="cvContact"></p>
+    </div>
+
+    <div class="section">
+    <h3>Profil</h3>
+    <p id="cvProfil"></p>
+    </div>
+
+    <div class="section">
+    <h3>Expériences</h3>
+    <div id="cvExp"></div>
+    </div>
+
+    <div class="section">
+    <h3>Compétences</h3>
+    <div id="cvSkills"></div>
+    </div>
+
+    <div class="section">
+    <h3>Soft Skills</h3>
+    <div id="cvSoft"></div>
+    </div>
+
+    <div class="score-box">
+      <p id="scoreText">Score CV : 0%</p>
+      <div class="bar">
+        <div id="barFill"></div>
+    </div>
+</div>
+
+  </div>
+
+</div>
+<!--pieds de page-->
+<div class="footer">
+<h2>À propos</h2>
+<p>CVision est une plateforme permettant de créer facilement des CV professionnels modernes.</p>
+
+<h3>Contact</h3>
+<p>contact@cvision.com</p>
+
+<p>© 2026 CVision</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+<script>
+
+
+function updateNom(){
+  cvNom.textContent = prenom.value + " " + nom.value;
+}
+
+nom.oninput = updateNom;
+prenom.oninput = updateNom;
+
+titre.oninput = () => cvTitre.textContent = titre.value;
+
+function updateContact(){
+  cvContact.textContent =
+    email.value+" | "+tel.value+" | "+ville.value;
+}
+
+email.oninput = updateContact;
+
+function calcScore(){
+  let total=7;
+  let filled=0;
+
+  ["nom","prenom","titre","email","tel","ville","profil"].forEach(id=>{
+    if(document.getElementById(id).value!="") filled++;
+  });
+
+  let percent = Math.round((filled/total)*100);
+
+  scoreText.textContent="Score CV : "+percent+"%";
+  barFill.style.width = percent+"%";
+}
+
+setInterval(calcScore,500);
+
+function printCV(){
+  window.print();
+}
+
+</script>
+
+</body>
+</html>
